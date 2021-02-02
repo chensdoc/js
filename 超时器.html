@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p><span id="sid"  color="red">6</span>s后进行跳转！</p>
+    <input type="button" id="btn" value="停止">
+    <script>
+        sobj=document.getElementById('sid');
+
+        intervalObj=setInterval(function(){
+            a=sobj.innerHTML;
+            sobj.innerHTML=--a;
+        },1000);
+        timeoutObj=setTimeout(function(){
+            location='https://www.baidu.com';
+        },6000);
+        document.getElementById('btn').onclick=function() {
+            clearTimeout(timeoutObj);
+            clearInterval(intervalObj);
+        }
+    </script>
+</body>
+</html>

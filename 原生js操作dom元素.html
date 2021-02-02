@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var temp=document.createElement("li");
+        // var content=document.createTextNode("我是插入的文字");
+        // temp.appendChild(content);
+        // document.getElementsByTagName("body")[0].appendChild(temp);
+
+        temp.innerHTML="我是插入的文字2";
+        document.body.append(temp);
+
+        document.body.append("123");
+        //appendChild不支持直接传字符串
+        document.body.appendChild(document.createTextNode("456"));
+        console.log(document.body.appendChild(document.createTextNode("456")));
+        
+    </script>
+</body>
+    <li class="cc"  class="cc">2</li>
+    <li class="cc">3</li>
+    <li class="cc">4</li>
+</html>
