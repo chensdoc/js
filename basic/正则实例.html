@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>phone='17715779864'<br>
+       email='1040255945@qq.com'<br>
+       date='2016/05/11'
+    </p>
+    <input type="button" value="匹配电话" id="a">
+    <input type="button" value="匹配邮箱" id="b">
+    <input type="button" value="高级匹配" id="c">
+    <script>
+        phone='17715779864';
+        document.getElementById('a').onclick=function(){
+            if(phone.match(/^177\d{8}$/i)){
+                alert("匹配正确");
+            }else{
+                alert("匹配错误");
+            }
+        }
+        email='1040255945@qq.com';
+        document.getElementById('b').onclick=function(){
+            if(email.match(/^\w+@\w+\.\w+$/i)){
+                alert("邮箱格式正确");
+            }else{
+                alert("匹配错误");
+            }
+        }
+        date='2016/05/11';
+        document.getElementById('c').onclick=function(){
+            time=date.replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2');
+            alert(time);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function compareObj(obj1,obj2){
+            if(typeof obj1 !== "object" || typeof obj2 !== "object"){
+                if(obj1 !== obj2){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+
+            var obj1Arr=Object.getOwnPropertyNames(obj1);
+            var obj2Arr=Object.getOwnPropertyNames(obj2);
+            
+            if(obj1Arr.length !== obj2Arr.length){
+                return false;
+            }
+            //默认设置对象内容相同
+            var status=true;
+            for(key of obj1Arr){
+                status=compareObj(obj1[key],obj2[key]);
+                if(!status){
+                    break;
+                }
+            }      
+            return status;
+        }
+
+        const obj1 = {
+            a: 1,
+            b: {
+                c: 2,
+                d: {
+                e: 4
+                }
+            }
+        }
+        const obj2 = {
+            a: 1,
+            b: {
+                c: 2,
+                d: {
+                e: 5
+                }
+            }
+        }
+        console.log(compareObj(obj1,obj2))
+    </script>
+</body>
+</html>

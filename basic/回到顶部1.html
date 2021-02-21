@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <a href="#abc">
+        <img src="image/001.jpg" alt="" id="pid">
+    </a>
+</div>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <h3>0000</h3>
+    <script>
+        console.log(document.getElementById('pid'));
+        nu=navigator.userAgent;
+        window.onscroll=function(){
+            if(nu.match(/chrome/i)){
+                st=document.documentElement.scrollTop;
+                document.title=st;
+                if(st>500){
+                    document.getElementById('pid').style.display='block';
+                }else{
+                    document.getElementById('pid').style.display='none';
+                }
+            }else{
+                st=document.documentElement.scrollTop;
+                document.title=st;
+                if(st>500){
+                    document.getElementById('pid').style.display='block';
+                }else{
+                    document.getElementById('pid').style.display='none';
+                }
+            }
+        }
+        document.getElementById('pid').onclick=function(){
+            if(nu.match(/chrome/i)){
+                ys=0;
+                yv=0.1;
+                setInterval(function() {
+                    ys-=yv;
+                    if(ys<=0){
+                        ys=0;
+                    }
+                    document.documentElement.scrollTop=ys;
+                },100);
+
+            }else{
+                document.documentElement.scrollTop=0;
+
+            }
+        }
+
+    </script>
+</body>
+</html>

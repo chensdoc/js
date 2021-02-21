@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cookie-封装</title>
+    <script>
+        window.onload=function(ev){
+            // addCookie("gender","male");
+            addCookie("score","998",1,"127.0.0.1");
+            addCookie("score1","997",1,"127.0.0.1");
+            addCookie("score2","996",1,"127.0.0.1");
+            addCookie("score3","995",1,"127.0.0.1");
+            function addCookie(key,value,day,path,domain){
+                //1.处理默认保存的路径
+                // if(!path){
+                //     var index=window.location.pathname.lastIndexOf("/");
+                //     var currentPath=window.location.pathname.substring(index);
+                //     path=currentPath;
+                // }
+                var index=window.location.pathname.lastIndexOf("/");
+                var currentPath=window.location.pathname.substring(0,index);
+                path=path||currentPath;
+                //2.处理默认保存的domain
+                domain=domain||document.domain;
+                //3.处理默认的过期时间
+                if(!day){
+                    document.cookie=key+"="+value+";path="+path+";domain="+domain+";";
+                }else{
+                    var date=new Date();
+                    date.setDate(date.getDate()+day);
+                    document.cookie=key+"="+value+";expires="+date.toGMTString()+";path="+path+";domain="+domain+";";
+                }
+            }
+            function getCookie(key){
+                var res=document.cookie.split(";");
+                for(i in res){
+                    var temp=res[i].split("=");
+                    if(key===temp[0].trim()){
+                        console.log(temp[0]);
+                        return temp[1];
+                    }
+                }
+
+            }
+            function delCookie(key){
+                addCookie(key,getCookie(key),-1);
+            }
+            delCookie("score3");
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

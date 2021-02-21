@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <div id="hid">
+        <h2 name="b">11111</h2>
+        <h2 name="b">22222</h2>
+        <h2 name="b">33333</h2>
+    </div>
+    <script>
+        hobj=document.getElementsByName('b');
+        // alert(hobj.length);
+        for(i=0;i<hobj.length;i++){
+            hobj[i].setAttribute("num",'0');
+
+            hobj[i].onclick=function(){
+                index=parseInt(this.getAttribute('num'));
+                if(index%2!=0){
+                    this.style.background='#ccc';
+                    index=index+1;
+                }else{
+                    this.style.background='#fff';
+                    index=index+1;
+                }
+                this.setAttribute('num',index);
+            }
+            // hobj[i].onmouseout=function(){
+            //     // this.style.background='#fff';
+            // }
+        }
+    </script>
+</body>
+</html>

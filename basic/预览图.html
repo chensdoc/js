@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            border: 2px dashed #000 ;
+            width: 300px;
+            height: 200px;
+            padding: 10px;
+        }
+        #left{
+            float: left;
+        }
+        #right{
+            float: right;
+        }
+        textarea{
+            width: 90%;
+            height: 80px;
+            resize: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="left">
+        <p>用户名：</p><p id="name1"></p><br>
+        <p>留言：</p><p id="text1"></p><br>
+    </div>
+    <div id="right">
+        用户名：<br><input type="text" placeholder="username1" id="name"><br>
+        留言：<br><textarea placeholder="请输入" id="text"></textarea><br>
+        <input type="button" id="btn" value="ok">
+    </div>
+    <script>
+        nameObj=document.getElementById('name');
+        name1Obj=document.getElementById('name1');
+        textObj=document.getElementById('text');
+        text1Obj=document.getElementById('text1');
+        nameObj.onblur=function(){
+            val=this.value;
+            name1Obj.innerHTML=val;
+        }
+        textObj.onblur=function(){
+            val=this.value;
+            text1Obj.innerHTML=val;
+        }
+    </script>
+</body>
+</html>

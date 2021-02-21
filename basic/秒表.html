@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+
+        div{
+            width:120px;
+            height:50px;
+            background:black;
+            border-radius:10px;
+        }
+        p{
+            color: #0f0;
+            font-size:20px;
+            line-height:50px;
+            text-align:center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <p id="pid">123</p>
+    </div>
+    <input type="button" value='开始' id="start">
+    <input type="button" value='停止' id="over">
+    <script>
+        function getDate(){
+            myDate=new Date();
+            h=myDate.getHours();
+            m=myDate.getMinutes();
+            s=myDate.getSeconds();
+            if(h<10){
+                h='0'+h;
+            }
+            if(m<10){
+                m='0'+m;
+            }
+            if(s<10){
+                s='0'+s;
+            }
+            document.getElementById('pid').innerHTML=h+':'+m+':'+s;
+
+
+        }
+
+
+        getDate();
+        start();
+        function start(){dsq=setInterval(getDate,1000)};
+        function stop(){
+            clearInterval(dsq);
+        }
+        document.getElementById('over').onclick=function() {
+            stop();
+        }
+        document.getElementById('start').onclick=function() {
+            start();
+        }
+    </script>
+</body>
+</html>

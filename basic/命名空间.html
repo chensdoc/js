@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var jscore=jscore || {};
+        // jscore.util=jscore.util || {};
+        // jscore.util.common={
+        //     raiseError:function(message){
+        //         throw new Error(message);
+        //     },
+        //     showMessage:function(info){
+        //         console.log(info);
+        //     }
+        // }
+        // jscore.util.common.showMessage("this is a message");
+        // jscore.util.common.raiseError("this is an error");
+
+        var __global__=this;
+        var jscore = jscore || {};
+        jscore.util=jscore.util || {};
+        jscore.util.namespace=function(name){
+            var parent = __global__;
+            var array = name.split(".");
+            for(var i = 0,len=array.length;i<len;i++){
+                console.log("array[i] "+array[i]);
+                parent[array[i]]=parent[array[i]] || {};
+                parent = parent[array[i]];
+                
+            }
+        }
+        
+        jscore.util.namespace("uikit.ui")
+       
+        uikit.ui.showMessage=function(msg){
+            var tag=new Date().toString();
+            console.log(`${tag}`+msg);
+        }
+
+        uikit.ui.showMessage("initializing the network...")
+    </script>
+</body>
+</html>

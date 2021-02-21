@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Dog=function(name){
+            //console.log(this); 此处this为Dog()
+            this.name=name || "default";
+            this.getName=()=>{
+                return this.name;
+            }
+            // return {
+            //     name:this.name
+            // }
+        }
+        var dog = new Dog("wc");
+        console.log(dog);
+        // console.log(dog.getName());
+        var dog1=Dog("hh");
+        console.log(dog1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+        }
+        #imgid{
+            position: absolute;
+            top: 0px;
+            left:0px;
+            overflow: hidden;
+        }
+        img{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="imgid">
+        <img src="image/001.jpg" alt="该图片不能正常展示" id="pid">
+    </div>
+    <script>
+        imgObj=document.getElementById('imgid');
+        ys=0;
+        yv=10;
+        xs=0;
+        xv=10;
+        ksh=document.documentElement.clientHeight;
+        hdiffer=ksh-90;
+        ksw=document.documentElement.clientWidth;
+        wdiffer=ksw-94;
+        setInterval(function() {
+            ys=ys+yv;
+            if(ys>=hdiffer){
+                ys=hdiffer;
+                yv=-yv;
+            }
+            if(ys<=0){
+                ys=0;
+                yv=-yv;
+            }
+            xs=xs+xv;
+            if(xs>=wdiffer){
+                xs=wdiffer;
+                xv=-xv;
+            }
+            if(xs<=0){
+                xs=0;
+                xv=-xv;
+            }
+
+            imgObj.style.top=ys+'px';
+            imgObj.style.left=xs+'px';
+
+        },20);
+    </script>
+</body>
+</html>

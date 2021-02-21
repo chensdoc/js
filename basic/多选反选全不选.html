@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="a.jsp">
+        <p>选择爱好</p>
+        <p>
+            <label>
+                <input type="checkbox" name=""  id="1">打篮球
+            </label>
+        </p>
+        <p>
+            <label>
+                <input type="checkbox" name="" id="2" >打篮球1
+            </label>
+        </p>
+        <p>
+            <label>
+                <input type="checkbox" name="" id="3" >打篮球2
+            </label>
+        </p>
+        <p>
+            <label>
+                <input type="checkbox" name=""  id="">打篮球3
+            </label>
+        </p>
+        <p>
+            <label>
+                <input type="checkbox" name=""  id="">打篮球4
+            </label>
+        </p>
+        <p>
+            <input type="button" id="all" value="全选">
+            <input type="button" id="notall" value="全不选">
+            <input type="button" id="unall" value="反选">
+
+            <button id="all1">button全选</button>
+        </p>
+    </form>
+    <script>
+        all=document.getElementById('all');
+        all1=document.getElementById('all1');
+        notall=document.getElementById('notall');
+        unall=document.getElementById('unall');
+        objs=document.getElementsByTagName('input');
+        all.onclick=function() {
+            for(i=0;i<objs.length;i++){
+                objs[i].checked=true;
+            }
+        }
+        
+        notall.onclick=function() {
+            for(i=0;i<objs.length;i++){
+                objs[i].checked=false;
+            }
+        }
+        unall.onclick=function() {
+            for(i=0;i<objs.length;i++){
+                if(objs[i].checked){
+                    objs[i].checked=false;
+                }else{
+                    objs[i].checked=true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
